@@ -14,9 +14,9 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 // 👇 SETUP FILE & GAMBAR
 // =========================================================
 
-const cardGLB = "/assets/card.glb";
-const lanyard = "/assets/lanyard.png";
-const myPhotoPath = "/assets/Id Card.jpg";
+const cardGLB = "./assets/card.glb";
+const lanyard = "./assets/lanyard.png";
+const myPhotoPath = "./assets/Id Card.jpg";
 
 // =========================================================
 

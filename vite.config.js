@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/my-portofolio/",  // 👈 Tulis baris ini (sesuaikan nama repo barunya)
+  base: "/my-portofolio/",  // 👈 Sesuai nama repo di screenshot
   plugins: [
     react(), 
     tailwindcss()
