@@ -14,9 +14,10 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 // 👇 SETUP FILE & GAMBAR
 // =========================================================
 
-const cardGLB = "./assets/card.glb";
-const lanyard = "./assets/lanyard.png";
-const myPhotoPath = "./assets/Id Card.jpg";
+// Pakai trik ini biar otomatis baca nama repo 'my-portofolio'
+const cardGLB = `${import.meta.env.BASE_URL}assets/card.glb`;
+const lanyard = `${import.meta.env.BASE_URL}assets/lanyard.png`;
+const myPhotoPath = `${import.meta.env.BASE_URL}assets/Id Card.jpg`;
 
 // =========================================================
 
