@@ -14,6 +14,10 @@ import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; 
 
+// 👇 IMPORT GAMBAR & CV DI SINI (Supaya Vite kenal)
+import fotoHasmi from './assets/hasmi1.png';
+import fileCV from './assets/CV Hasmi.pdf'; 
+
 AOS.init();
 
 function App() {
@@ -28,17 +32,6 @@ function App() {
   const handleCloseModal = () => {
     setSelectedProject(null);
   };
-
-  // --- Redirect Loop DIMATIKAN (Aman) ---
-  /* useEffect(() => {
-    const isReload =
-      performance.getEntriesByType("navigation")[0]?.type === "reload";
-
-    if (isReload) {
-      const baseUrl = window.location.origin + "/portofolio/";
-      window.location.replace(baseUrl);
-    } 
-  }, []); */
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,8 +66,10 @@ function App() {
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
-              {/* PERBAIKAN 1: Hapus titik (.) */}
-              <img src="/assets/hasmi1.png" className="w-10 rounded-md" />
+              
+              {/* ✅ PERBAIKAN 1: Pakai variabel import */}
+              <img src={fotoHasmi} className="w-10 rounded-md" alt="Hasmi" />
+              
               <q>Avoid or just undertake it</q>
             </div>
             <h1 className="text-5xl font-bold mb-6">
@@ -88,9 +83,10 @@ function App() {
               className=" mb-6"
             />
             <div className="flex items-center sm:gap-4 gap-2">
-              {/* PERBAIKAN 2: Hapus titik (.) */}
+              
+              {/* ✅ PERBAIKAN 2: Link CV pakai variabel import */}
               <a 
-                href="/assets/CV Hasmi.pdf" 
+                href={fileCV} 
                 download="Hasmi_CV.pdf" 
                 className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
               >
@@ -110,8 +106,10 @@ function App() {
               handle="hasmi"
               status="Online"
               contactText="Contact Me"
-              // PERBAIKAN 3: Hapus titik (.)
-              avatarUrl="/assets/hasmi1.png"
+              
+              // ✅ PERBAIKAN 3: Avatar Profile Card pakai variabel import
+              avatarUrl={fotoHasmi}
+              
               showUserInfo={true}
               enableTilt={true}
               enableMobileTilt={false}
@@ -120,7 +118,7 @@ function App() {
           </div>
         </div>
         
-        {/* ... (Sisanya ke bawah tidak perlu diubah, sudah aman) ... */}
+        {/* ... Bagian bawah aman ... */}
         
         {/* tentang */}
         <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
