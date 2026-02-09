@@ -14,10 +14,6 @@ import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; 
 
-// 👇 IMPORT GAMBAR & CV DI SINI (Supaya Vite kenal)
-import fotoHasmi from './assets/hasmi1.png';
-import fileCV from './assets/CV Hasmi.pdf'; 
-
 AOS.init();
 
 function App() {
@@ -67,8 +63,12 @@ function App() {
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
               
-              {/* ✅ PERBAIKAN 1: Pakai variabel import */}
-              <img src={fotoHasmi} className="w-10 rounded-md" alt="Hasmi" />
+              {/* ✅ PERBAIKAN 1: Pakai BASE_URL agar terbaca di GitHub Pages */}
+              <img 
+                src={`${import.meta.env.BASE_URL}assets/hasmi1.png`} 
+                className="w-10 rounded-md" 
+                alt="Hasmi" 
+              />
               
               <q>Avoid or just undertake it</q>
             </div>
@@ -84,9 +84,9 @@ function App() {
             />
             <div className="flex items-center sm:gap-4 gap-2">
               
-              {/* ✅ PERBAIKAN 2: Link CV pakai variabel import */}
+              {/* ✅ PERBAIKAN 2: Link CV pakai BASE_URL */}
               <a 
-                href={fileCV} 
+                href={`${import.meta.env.BASE_URL}assets/CV Hasmi.pdf`} 
                 download="Hasmi_CV.pdf" 
                 className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
               >
@@ -107,8 +107,8 @@ function App() {
               status="Online"
               contactText="Contact Me"
               
-              // ✅ PERBAIKAN 3: Avatar Profile Card pakai variabel import
-              avatarUrl={fotoHasmi}
+              // ✅ PERBAIKAN 3: Avatar Profile Card pakai BASE_URL
+              avatarUrl={`${import.meta.env.BASE_URL}assets/hasmi1.png`}
               
               showUserInfo={true}
               enableTilt={true}
@@ -118,7 +118,7 @@ function App() {
           </div>
         </div>
         
-        {/* ... Bagian bawah aman ... */}
+        {/* ... (Code bawah sama persis) ... */}
         
         {/* tentang */}
         <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
