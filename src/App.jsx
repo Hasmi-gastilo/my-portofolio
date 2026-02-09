@@ -285,7 +285,7 @@ function App() {
                       name="message"
                       id="message"
                       cols="45"
-                      rows="7"
+                      rows="14"
                       placeholder="Message..."
                       className="border border-zinc-500 p-2 rounded-md"
                       required
