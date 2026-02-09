@@ -69,7 +69,7 @@ function App() {
               
               {/* ✅ PERBAIKAN 2: Path ditulis manual (Hardcode) */}
               <img 
-                src="/my-portofolio/assets/hasmi1.png" 
+                src="/my-portofolio/assets/profil.png" 
                 className="w-10 rounded-md" 
                 alt="Hasmi" 
               />
@@ -112,7 +112,7 @@ function App() {
               contactText="Contact Me"
               
               // ✅ PERBAIKAN 4: Path Avatar ditulis manual
-              avatarUrl="/my-portofolio/assets/hasmi1.png"
+              avatarUrl="/my-portofolio/assets/profil.png"
               
               showUserInfo={true}
               enableTilt={true}
