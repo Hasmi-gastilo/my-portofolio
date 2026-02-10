@@ -247,51 +247,58 @@ function App() {
               <ChatRoom />
             </div>
 
-            <div className="flex-1">
+           <div className="flex-1 h-full">
               <form
                 action="https://formsubmit.co/hasmigastilo@gmail.com"
                 method="POST"
-                className="bg-zinc-800 p-10 w-full rounded-md"
+                // 👇 UBAH 1: Tambah h-full flex flex-col biar formnya menuhin wadah
+                className="bg-zinc-800 p-10 w-full rounded-md h-full flex flex-col"
                 autoComplete="off"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="500"
                 data-aos-once="true"
               >
-                <div className="flex flex-col gap-6">
+                {/* 👇 UBAH 2: Tambah h-full di sini */}
+                <div className="flex flex-col gap-6 h-full">
+                  
                   <div className="flex flex-col gap-2">
                     <label className="font-semibold">Full Name</label>
                     <input
                       type="text"
                       name="Name"
                       placeholder="Input Name..."
-                      className="border border-zinc-500 p-2 rounded-md"
+                      className="border border-zinc-500 p-2 rounded-md bg-transparent"
                       required
                     />
                   </div>
+
                   <div className="flex flex-col gap-2">
                     <label className="font-semibold">Email</label>
                     <input
                       type="email"
                       name="Email"
                       placeholder="Input Email..."
-                      className="border border-zinc-500 p-2 rounded-md"
+                      className="border border-zinc-500 p-2 rounded-md bg-transparent"
                       required
                     />
                   </div>
-                  <div className="flex flex-col gap-2">
+
+                  {/* 👇 UBAH 3: Tambah flex-1 biar dia ngabisin sisa ruang kosong */}
+                  <div className="flex flex-col gap-2 flex-1">
                     <label htmlFor="message" className="font-semibold">Message</label>
                     <textarea
                       name="message"
                       id="message"
-                      cols="45"
-                      rows="14"
+                      // ❌ rows="14" SUDAH DIHAPUS (biar gak kaku)
                       placeholder="Message..."
-                      className="border border-zinc-500 p-2 rounded-md"
+                      // 👇 UBAH 4: Tambah h-full resize-none
+                      className="border border-zinc-500 p-2 rounded-md bg-transparent h-full resize-none"
                       required
                     ></textarea>
                   </div>
-                  <div className="text-center">
+
+                  <div className="text-center mt-auto">
                     <button
                       type="submit"
                       className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors"
@@ -299,6 +306,7 @@ function App() {
                       <ShinyText text="Send" disabled={false} speed={3} className="custom-class" />
                     </button>
                   </div>
+
                 </div>
               </form>
             </div>
