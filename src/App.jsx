@@ -28,7 +28,18 @@ function App() {
   };
 
   useEffect(() => {
-    // ✅ PERBAIKAN 1: AOS init dipindah ke sini biar gak error warning
+    // ✅ 1. PAKSA SCROLL KE ATAS (TOP - LEFT)
+    // Ini bikin layar langsung loncat ke posisi (0, 0) pas loading selesai
+    window.scrollTo(0, 0);
+
+    // ✅ 2. MATIKAN MEMORI SCROLL BROWSER
+    // Biar pas di-refresh, browser GAK INGAT posisi terakhir (misal di footer)
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // --- Kode lama kamu di bawah ini tetap aman ---
+    
     AOS.init({
       duration: 1000,
       once: true,
@@ -49,7 +60,7 @@ function App() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, []); // <--- Pastikan array ini kosong biar jalan sekali pas mounting
 
   return (
     <>
@@ -205,7 +216,7 @@ function App() {
             ))}
           </div>
         </div>
-
+ 
         <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
         <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
         <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Menampilkan sejumlah proyek yang mencerminkan kreativitas dan semangat saya dalam membangun pengalaman digital yang bermakna.</p>
@@ -247,58 +258,51 @@ function App() {
               <ChatRoom />
             </div>
 
-           <div className="flex-1 h-full">
+            <div className="flex-1">
               <form
                 action="https://formsubmit.co/hasmigastilo@gmail.com"
                 method="POST"
-                // 👇 UBAH 1: Tambah h-full flex flex-col biar formnya menuhin wadah
-                className="bg-zinc-800 p-10 w-full rounded-md h-full flex flex-col"
+                className="bg-zinc-800 p-10 w-full rounded-md"
                 autoComplete="off"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="500"
                 data-aos-once="true"
               >
-                {/* 👇 UBAH 2: Tambah h-full di sini */}
-                <div className="flex flex-col gap-6 h-full">
-                  
+                <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="font-semibold">Full Name</label>
                     <input
                       type="text"
                       name="Name"
                       placeholder="Input Name..."
-                      className="border border-zinc-500 p-2 rounded-md bg-transparent"
+                      className="border border-zinc-500 p-2 rounded-md"
                       required
                     />
                   </div>
-
                   <div className="flex flex-col gap-2">
                     <label className="font-semibold">Email</label>
                     <input
                       type="email"
                       name="Email"
                       placeholder="Input Email..."
-                      className="border border-zinc-500 p-2 rounded-md bg-transparent"
+                      className="border border-zinc-500 p-2 rounded-md"
                       required
                     />
                   </div>
-
-                  {/* 👇 UBAH 3: Tambah flex-1 biar dia ngabisin sisa ruang kosong */}
-                  <div className="flex flex-col gap-2 flex-1">
+                  <div className="flex flex-col gap-2">
                     <label htmlFor="message" className="font-semibold">Message</label>
                     <textarea
                       name="message"
                       id="message"
-                      // ❌ rows="14" SUDAH DIHAPUS (biar gak kaku)
+                      cols="45"
+                      rows="14"
                       placeholder="Message..."
-                      // 👇 UBAH 4: Tambah h-full resize-none
-                      className="border border-zinc-500 p-2 rounded-md bg-transparent h-full resize-none"
+                      className="border border-zinc-500 p-2 rounded-md"
                       required
                     ></textarea>
                   </div>
-
-                  <div className="text-center mt-auto">
+                  <div className="text-center">
                     <button
                       type="submit"
                       className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors"
@@ -306,7 +310,6 @@ function App() {
                       <ShinyText text="Send" disabled={false} speed={3} className="custom-class" />
                     </button>
                   </div>
-
                 </div>
               </form>
             </div>

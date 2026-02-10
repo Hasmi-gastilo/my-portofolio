@@ -10,34 +10,74 @@ const Footer = () => {
   ];
 
   return (
-    <div className="mt-32 pb-8 flex flex-col items-center relative z-10">
-      {/* Flex container adaptif */}
-      <div className="w-full flex flex-col md:flex-row items-center md:justify-between gap-6">
+    <footer className="mt-40 pb-10 pt-5 flex flex-col items-center w-full relative z-10">
         
-        {/* Judul - paling atas di mobile */}
-        <h1 className="text-2xl font-bold order-1 md:order-none">
-          Portofolio
-        </h1>
+        {/* 👇 UBAH DI SINI:
+            Mobile: Tetap flex-col (tumpuk ke bawah).
+            Desktop (md): Pakai 'grid grid-cols-3'. Ini membagi layar jadi 3 kotak sama besar.
+        */}
+        <div className="w-full flex flex-col md:grid md:grid-cols-3 items-center gap-8 px-6 max-w-7xl mx-auto">
+          
+          {/* 1. BAGIAN KIRI (JUDUL) */}
+          {/* 'md:justify-self-start' = Paksa nempel ke kiri mentok */}
+          <div className="order-1 md:order-none md:justify-self-start">
+            <h1 className="text-2xl font-bold text-white tracking-wide">
+                Portofolio
+            </h1>
+          </div>
 
-        {/* Ikon Sosmed - di tengah di mobile */}
-        <div className="flex gap-3 order-2 md:order-none">
-          <a href="https://github.com/Hasmi-gastilo"><i className="ri-github-fill ri-2x"></i></a>
-          <a href="https://www.instagram.com/hsm_gs/#/"><i className="ri-instagram-fill ri-2x"></i></a>
-          <a href="http://www.youtube.com/@hasmi4371"><i className="ri-youtube-fill ri-2x"></i></a>
+          {/* 2. BAGIAN TENGAH (ICONS) */}
+          {/* 'md:justify-self-center' = Paksa nempel di tengah mentok */}
+          <div className="order-2 md:order-none md:justify-self-center flex gap-6 items-center">
+            
+            {/* GitHub - Cyan Glow */}
+            <a href="https://github.com/Hasmi-gastilo" 
+               className="text-cyan-600/80 transition-all duration-500 ease-in-out
+                          hover:text-cyan-300 hover:scale-125
+                          drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]
+                          hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)]">
+                <i className="ri-github-fill ri-2x"></i>
+            </a>
+
+            {/* Instagram - Pink Glow */}
+            <a href="https://www.instagram.com/hsm_gs/#/" 
+               className="text-fuchsia-600/80 transition-all duration-500 ease-in-out
+                          hover:text-fuchsia-300 hover:scale-125
+                          drop-shadow-[0_0_8px_rgba(217,70,239,0.6)]
+                          hover:drop-shadow-[0_0_25px_rgba(232,121,249,1)]">
+                <i className="ri-instagram-fill ri-2x"></i>
+            </a>
+
+            {/* YouTube - Red Glow */}
+            <a href="http://www.youtube.com/@hasmi4371" 
+               className="text-red-600/80 transition-all duration-500 ease-in-out
+                          hover:text-red-300 hover:scale-125
+                          drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]
+                          hover:drop-shadow-[0_0_25px_rgba(248,113,113,1)]">
+                <i className="ri-youtube-fill ri-2x"></i>
+            </a>
+
+          </div>
+
+          {/* 3. BAGIAN KANAN (DOCK) */}
+          {/* 'md:justify-self-end' = Paksa nempel ke kanan mentok */}
+          <div className="order-3 md:order-none md:justify-self-end mt-4 md:mt-0">
+            <Dock 
+              items={items}
+              panelHeight={30}
+              baseItemSize={60}
+              magnification={100}
+            />
+          </div>
+
         </div>
+        
+        {/* Copyright */}
+        <p className="text-xs text-gray-600 mt-12 font-light">
+            © 2026 Hasmi Gastilo. All rights reserved.
+        </p>
 
-        {/* Dock - paling bawah di mobile */}
-        <div className="order-3 md:order-none mt-15 md:mt-0  md:mb-0">
-          <Dock 
-            items={items}
-            panelHeight={30}
-            baseItemSize={60}
-            magnification={100}
-          />
-        </div>
-
-      </div>
-    </div>
+    </footer>
   );
 };
 
