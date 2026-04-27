@@ -47,31 +47,32 @@ export default function ChatRoom() {
   }, [messages]);
 
   return (
-    <div className="bg-zinc-900 border border-gray-700 p-4 sm:p-6 rounded-xl shadow-lg max-w-xl mx-auto mt-10">
+    <div className="bg-zinc-900 border border-gray-700 p-4 sm:p-6 rounded-xl shadow-lg max-w-xl mx-auto mt-10 w-full overflow-hidden">
       
       {/* --- HEADER --- */}
       <div className="flex items-center gap-2 mb-4 justify-center">
-        <h2 className="text-2xl font-bold text-white">💬 Diskusi Project</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-white">Diskusi Project</h2>
         <span className="bg-green-500 text-xs text-black font-bold px-2 py-0.5 rounded-full animate-pulse">
           OPEN
         </span>
       </div>
 
       {/* --- AREA PESAN (Chat History) --- */}
-      <div className="h-64 overflow-y-auto border border-gray-700 p-4 rounded-lg bg-zinc-800 mb-4 space-y-4 custom-scrollbar">
+      <div className="h-64 overflow-y-auto border border-gray-700 p-3 sm:p-4 rounded-lg bg-zinc-800 mb-4 space-y-4 custom-scrollbar">
         {messages.map((msg) => (
           <div
             key={msg.id}
-            className={`flex gap-3 ${msg.isUser ? "flex-row-reverse" : "flex-row"}`}
+            className={`flex gap-2 sm:gap-3 ${msg.isUser ? "flex-row-reverse" : "flex-row"}`}
           >
             <img 
               src={msg.photoURL} 
               alt="avatar" 
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-600 object-cover" 
+              // 👇 INI OBAT FOTO PENYEK: "shrink-0" bikin ukuran foto kebal dari paksaan mengecil
+              className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full border border-gray-600 object-cover" 
             />
-            <div className={`flex flex-col max-w-[85%] ${msg.isUser ? "items-end" : "items-start"}`}>
+            <div className={`flex flex-col max-w-[80%] sm:max-w-[85%] ${msg.isUser ? "items-end" : "items-start"}`}>
               <div
-                className={`px-4 py-2 rounded-2xl text-sm sm:text-base shadow-sm ${
+                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-2xl text-xs sm:text-sm md:text-base shadow-sm ${
                   msg.isUser 
                     ? "bg-blue-600 text-white rounded-br-none" 
                     : "bg-gray-700 text-gray-100 rounded-bl-none"
@@ -93,45 +94,45 @@ export default function ChatRoom() {
         <div className="flex flex-col gap-3">
             
             {/* 1. Email */}
-            <a href="mailto:emailkamu@gmail.com" className="flex items-center gap-3 bg-zinc-800 p-3 rounded-lg hover:bg-zinc-700 transition-colors group cursor-pointer border border-transparent hover:border-blue-500/30">
-                <div className="bg-blue-900/30 p-2 rounded-full text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <a href="mailto:hasmigastilo@gmail.com" className="flex items-center gap-3 bg-zinc-800 p-3 rounded-lg hover:bg-zinc-700 transition-colors group cursor-pointer border border-transparent hover:border-blue-500/30 overflow-hidden">
+                <div className="bg-blue-900/30 p-2 rounded-full text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                         <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                     <p className="text-xs text-gray-400">Email</p>
-                    {/* 👇 GANTI EMAIL DI SINI */}
-                    <p className="text-sm font-semibold text-white">hasmigastilo@gmail.com</p>
+                    {/* 👇 PERBAIKAN: Font dikecilin (text-[11px]) dan pakai truncate biar gak turun ke bawah */}
+                    <p className="text-[11px] sm:text-sm font-semibold text-white truncate">hasmigastilo@gmail.com</p>
                 </div>
             </a>
 
             {/* 2. WhatsApp / Telepon */}
-            <a href="https://wa.me/6285853915424" target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-zinc-800 p-3 rounded-lg hover:bg-zinc-700 transition-colors group cursor-pointer border border-transparent hover:border-green-500/30">
-                <div className="bg-green-900/30 p-2 rounded-full text-green-400 group-hover:bg-green-600 group-hover:text-white transition-colors">
+            <a href="https://wa.me/6285853915424" target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-zinc-800 p-3 rounded-lg hover:bg-zinc-700 transition-colors group cursor-pointer border border-transparent hover:border-green-500/30 overflow-hidden">
+                <div className="bg-green-900/30 p-2 rounded-full text-green-400 group-hover:bg-green-600 group-hover:text-white transition-colors shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                         <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
                     </svg>
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                     <p className="text-xs text-gray-400">WhatsApp / Telp</p>
-                    {/* 👇 GANTI NOMOR DI SINI */}
-                    <p className="text-sm font-semibold text-white">+62 858-5391-5424</p>
+                    {/* 👇 PERBAIKAN SAMA */}
+                    <p className="text-xs sm:text-sm font-semibold text-white truncate">+62 858-5391-5424</p>
                 </div>
             </a>
 
             {/* 3. Lokasi */}
-            <div className="flex items-center gap-3 bg-zinc-800 p-3 rounded-lg hover:bg-zinc-700 transition-colors group cursor-pointer border border-transparent hover:border-red-500/30">
-                <div className="bg-red-900/30 p-2 rounded-full text-red-400 group-hover:bg-red-600 group-hover:text-white transition-colors">
+            <div className="flex items-center gap-3 bg-zinc-800 p-3 rounded-lg hover:bg-zinc-700 transition-colors group cursor-pointer border border-transparent hover:border-red-500/30 overflow-hidden">
+                <div className="bg-red-900/30 p-2 rounded-full text-red-400 group-hover:bg-red-600 group-hover:text-white transition-colors shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                         <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                     </svg>
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                     <p className="text-xs text-gray-400">Lokasi</p>
-                    {/* 👇 GANTI LOKASI DI SINI */}
-                    <p className="text-sm font-semibold text-white">Malang, Jawa Timur, Indonesia</p>
+                    {/* 👇 PERBAIKAN SAMA */}
+                    <p className="text-[11px] sm:text-sm font-semibold text-white truncate">Malang, Jawa Timur, Indonesia</p>
                 </div>
             </div>
 

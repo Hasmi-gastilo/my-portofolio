@@ -113,13 +113,14 @@ import Proyek1 from "/assets/proyek/project2.jpg";
 import Proyek2 from "/assets/proyek/project1.jpg";
 import Proyek3 from "/assets/proyek/project3.jpg";
 import Proyek4 from "/assets/proyek/project4.jpg";
-import Proyek5 from "/assets/proyek/proyek5.jpg";
+import Proyek5 from "/assets/proyek/project5.png";
 import Proyek6 from "/assets/proyek/project6.jpg";
+import Proyek7 from "/assets/proyek/project7.jpg";
 
 export const listProyek = [
   {
     id: 1,
-    image: Proyek1, 
+    image: Proyek1,
     title: "Website Laporan Saham",
     subtitle: "Aplikasi laporan saham berbasis web dengan fitur unggah data Excel dan visualisasi statistik....",
     fullDescription: "Aplikasi Laporan Saham adalah sistem berbasis web yang digunakan untuk mengolah dan menampilkan data saham yang diunggah melalui file Excel. Aplikasi ini menyajikan grafik statistik, persentase perubahan, serta laporan performa saham secara bulanan hingga tahunan, sehingga memudahkan pengguna dalam melakukan analisis dan pemantauan data saham secara terstruktur dan informatif.",
@@ -130,7 +131,7 @@ export const listProyek = [
   },
   {
     id: 2,
-    image: Proyek2, 
+    image: Proyek2,
     title: "Sistem Absensi Digital Berbasis QR Code",
     subtitle: "Aplikasi absensi digital berbasis QR Code untuk pencatatan kehadiran siswa secara real-time...",
     fullDescription: "Aplikasi Absensi Digital merupakan sistem berbasis QR Code yang dirancang untuk membantu proses pencatatan kehadiran secara lebih efisien dan akurat. Aplikasi ini memungkinkan pengguna melakukan absensi dengan mudah, menyimpan data secara terpusat, serta memudahkan pemantauan dan rekap kehadiran.",
@@ -143,7 +144,7 @@ export const listProyek = [
     id: 3,
     image: Proyek3, // Pastikan gambar ini sudah di-resize sesuai langkah 1
     title: "Website Cafe Shop", // Judul disesuaikan dengan gambar
-    subtitle: "Website pemesanan kopi online dengan fitur menu interaktif dan manajemen pesanan...", 
+    subtitle: "Website pemesanan kopi online dengan fitur menu interaktif dan manajemen pesanan...",
     fullDescription: "Website Cafe Shop yang dirancang modern untuk memudahkan pelanggan melihat menu, memilih varian kopi, dan melakukan pemesanan secara online. Website ini dilengkapi dengan fitur keranjang belanja, perhitungan harga otomatis, dan desain responsif yang nyaman diakses melalui perangkat mobile maupun desktop.",
     borderColor: "#F59E0B", // Warna Oranye/Kuning (Biar beda dari Biru & Hijau)
     gradient: "linear-gradient(145deg, #F59E0B, #000)",
@@ -155,20 +156,20 @@ export const listProyek = [
     image: Proyek4,
     title: "Personal Web Portfolio",
     subtitle: "Sebuah portofolio web interaktif yang menampilkan perjalanan profesional saya...",
-    fullDescription:"Sebuah portofolio web interaktif yang menampilkan perjalanan profesional saya, keterampilan, dan proyek-proyek yang telah saya kerjakan. Website ini dirancang dengan antarmuka yang menarik dan responsif, memungkinkan pengunjung untuk menjelajahi informasi tentang saya dengan mudah di berbagai perangkat.",
-    gradient: "linear-gradient(180deg, #10B981, #000)",
+    fullDescription: "Sebuah portofolio web interaktif yang menampilkan perjalanan profesional saya, keterampilan, dan proyek-proyek yang telah saya kerjakan. Website ini dirancang dengan antarmuka yang menarik dan responsif, memungkinkan pengunjung untuk menjelajahi informasi tentang saya dengan mudah di berbagai perangkat.",
+    gradient: "linear-gradient(180deg, #F59E0B, #000)",
     url: "",
     dad: "400",
   },
-    {
+  {
     id: 5,
     image: Proyek5,
-    title: "Color Blindness Detection App",
-    subtitle: "A cross-platform application available on both mobile and desktop...",
-    fullDescription:"A cross-platform application available on both mobile and desktop, created to help identify different types of color blindness through color recognition tests. The app provides users with instant results, making it useful for educational, medical, and self-assessment purposes. Its intuitive design and accessibility aim to support individuals in understanding and managing color vision deficiencies.",
+    title: "Vape Portfolio & Information App",
+    subtitle: "Aplikasi lintas platform untuk katalog produk vape dan portofolio brand...",
+    fullDescription: "Aplikasi lintas platform yang tersedia untuk perangkat mobile dan desktop, dirancang untuk menampilkan katalog produk vape, portofolio brand, serta informasi produk secara lengkap dan interaktif. Pengguna dapat menjelajahi berbagai koleksi, melihat detail spesifikasi, mengetahui produk terbaru, serta mengenal setiap brand dengan lebih mudah. Dengan tampilan modern, responsif, dan pengalaman pengguna yang optimal, aplikasi ini menjadi solusi digital yang efektif untuk meningkatkan daya tarik bisnis vape dan memperkuat kehadiran brand di era digital...",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
-    url: "",
+    url: "https://hasmi-gastilo.github.io/Vaape/",
     dad: "500",
   },
   {
@@ -180,6 +181,17 @@ export const listProyek = [
     borderColor: "#10B981", // Warna Hijau (Bisa diganti jika mau)
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "", // Masukkan link ke portofolio desain (jika ada)
+    dad: "600",
+  },
+  {
+    id: 7,
+    image: Proyek7, // Pastikan ini gambar yang sudah diedit pakai "Teknik Kanvas" di atas
+    title: "Clean Laundry Management App",
+    subtitle: "Aplikasi lintas platform untuk manajemen laundry modern dan efisien.",
+    fullDescription: "Aplikasi lintas platform yang tersedia untuk perangkat mobile dan desktop, dirancang untuk membantu operasional bisnis laundry secara modern, cepat, dan efisien. Aplikasi ini memungkinkan pengelolaan transaksi, pencatatan pesanan, pelacakan status cucian, manajemen pelanggan, hingga pembuatan laporan keuangan secara otomatis. Dengan tampilan yang responsif, mudah digunakan, dan fitur yang lengkap, aplikasi ini menjadi solusi digital yang ideal untuk meningkatkan produktivitas, kualitas layanan, dan pengelolaan bisnis laundry.",
+    borderColor: "#460a69", // Warna Hijau (Bisa diganti jika mau)
+    gradient: "linear-gradient(180deg, #460a69, #000)",
+    url: "https://hasmi-gastilo.github.io/laundry/", // Masukkan link ke portofolio desain (jika ada)
     dad: "600",
   },
 ];

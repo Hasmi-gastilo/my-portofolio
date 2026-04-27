@@ -101,7 +101,7 @@ function App() {
               
               {/* ✅ PERBAIKAN 3: Path CV ditulis manual */}
               <a 
-                href="/my-portofolio/assets/CV Hasmi.pdf" 
+                href="/my-portofolio/assets/CV Hasmi New.pdf" 
                 download="Hasmi_CV.pdf" 
                 className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
               >
@@ -218,8 +218,23 @@ function App() {
         </div>
  
         <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
-        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
-        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Menampilkan sejumlah proyek yang mencerminkan kreativitas dan semangat saya dalam membangun pengalaman digital yang bermakna.</p>
+        <h1 
+          className="text-left sm:text-center text-4xl font-bold mb-2" 
+          data-aos="fade-up" 
+          data-aos-duration="1000" 
+          data-aos-once="true"
+        >
+          Project
+        </h1>
+        <p 
+          className="text-left sm:text-center text-base/loose opacity-50" 
+          data-aos="fade-up" 
+          data-aos-duration="1000" 
+          data-aos-delay="300" 
+          data-aos-once="true"
+        >
+          Menampilkan sejumlah proyek yang mencerminkan kreativitas dan semangat saya dalam membangun pengalaman digital yang bermakna.
+        </p>
         <div className="proyek-box mt-14" >
 
           <div style={{ height: 'auto', position: 'relative' }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true" >
@@ -236,15 +251,18 @@ function App() {
 
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
           <h1
-            className="text-4xl mb-2 font-bold text-center"
+            // 👇 text-center diubah jadi text-left sm:text-center
+            className="text-4xl mb-2 font-bold text-left sm:text-center"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once="true"
           >
             Contact & Chat
           </h1>
+          
           <p
-            className="text-base/loose text-center mb-10 opacity-50"
+            // 👇 text-center diubah jadi text-left sm:text-center
+            className="text-base/loose text-left sm:text-center mb-10 opacity-50"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
