@@ -116,6 +116,7 @@ import Proyek4 from "/assets/proyek/project4.jpg";
 import Proyek5 from "/assets/proyek/project5.png";
 import Proyek6 from "/assets/proyek/project6.jpg";
 import Proyek7 from "/assets/proyek/project7.jpg";
+import Proyek8 from "/assets/proyek/project8.jpg"; // <--- INI YANG BARU DITAMBAHKAN
 
 export const listProyek = [
   {
@@ -128,6 +129,17 @@ export const listProyek = [
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/Hasmi-gastilo/Laporan_Saham",
     dad: "100",
+  },
+  {
+    id: 8,
+    image: Proyek8,
+    title: "Website Studio Foto Profesional",
+    subtitle: "Platform studio fotografi modern untuk booking sesi foto, galeri karya, dan layanan fotografi profesional...",
+    fullDescription: "Website Studio Foto Profesional merupakan platform digital yang dirancang untuk membantu bisnis fotografi dalam menampilkan portofolio, mengelola jadwal booking, serta mempermudah pelanggan melakukan reservasi secara online. Website ini dilengkapi dengan galeri foto modern, sistem booking real-time, informasi layanan fotografi, hingga tampilan premium yang elegan dan responsif.",
+    borderColor: "#C9A227",
+    gradient: "linear-gradient(180deg, #10B981, #000)",
+    url: "https://studio-booking--minkzouu.replit.app/booking",
+    dad: "200",
   },
   {
     id: 2,
