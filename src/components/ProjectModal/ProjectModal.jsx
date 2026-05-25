@@ -46,12 +46,12 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
         <img 
           src={project.image} 
           alt={project.title} 
-          className="w-full h-56 object-cover rounded-t-2xl"
+          className="w-full h-48 md:h-56 object-cover rounded-t-2xl"
         />
 
-        <div className="p-6 flex flex-col gap-4">
+        <div className="p-4 md:p-6 flex flex-col gap-3 md:gap-4">
             <div className="flex justify-between items-start">
-                <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-white">{project.title}</h2>
                 <button
                     onClick={handleClose}
                     className="text-zinc-400 hover:text-white transition-colors p-2 rounded-full hover:bg-zinc-700 -mt-2 -mr-2"
@@ -61,7 +61,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             </div>
 
             {/* --- DESKRIPSI LENGKAP --- */}
-            <p className="text-zinc-300 text-base leading-relaxed">
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed break-words">
                 {project.fullDescription}
             </p>
 

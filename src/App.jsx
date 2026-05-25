@@ -74,9 +74,9 @@ function App() {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
+        <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-6 md:pt-10 gap-6 xl:gap-0">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
-            <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
+            <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6 bg bg-zinc-800 w-fit p-3 md:p-4 rounded-2xl text-sm md:text-base">
               
               {/* ✅ PERBAIKAN 2: Path ditulis manual (Hardcode) */}
               <img 
@@ -87,7 +87,7 @@ function App() {
               
               <q>Avoid or just undertake it</q>
             </div>
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">
               <ShinyText text="Hi I'm Hasmi" disabled={false} speed={3} className='custom-class' />
             </h1>
             <BlurText
@@ -95,26 +95,26 @@ function App() {
               delay={150}
               animateBy="words"
               direction="top"
-              className=" mb-6"
+              className="text-sm md:text-base mb-6"
             />
-            <div className="flex items-center sm:gap-4 gap-2">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
               
               {/* ✅ PERBAIKAN 3: Path CV ditulis manual */}
               <a 
                 href="/my-portofolio/assets/CV Hasmi New.pdf" 
                 download="Hasmi_CV.pdf" 
-                className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
+                className="font-semibold bg-[#1a1a1a] w-full sm:w-auto text-center text-sm md:text-base p-3 px-5 md:p-4 md:px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
               >
                 <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
               </a>
 
-              <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
+              <a href="#project" className="font-semibold bg-[#1a1a1a] w-full sm:w-auto text-center text-sm md:text-base p-3 px-5 md:p-4 md:px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
                 <ShinyText text="Explore My Projects" disabled={false} speed={3} className="custom-class" />
               </a>
             </div>
 
           </div>
-          <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
+          <div className="flex justify-center md:block md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
             <ProfileCard
               name="Hasmi"
               title="Web Developer & Designer"
@@ -134,11 +134,11 @@ function App() {
         </div>
         
         {/* tentang */}
-        <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-            <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
+        <div className="mt-20 md:mt-15 mx-auto w-full max-w-[1600px] rounded-2xl md:rounded-3xl border-[3px] md:border-[5px] border-violet-500/40 shadow-[0_0_15px_rgba(168,85,247,0.4)] md:shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-4 md:p-6" id="about">
+          <div className="flex flex-row items-center justify-between gap-4 md:gap-10 pt-0 px-4 md:px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-r-0 md:border-r border-violet-500/30 pb-0">
               <div className="flex-1 text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-5">
                   About Me
                 </h2>
 
@@ -147,27 +147,27 @@ function App() {
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-base md:text-lg leading-relaxed mb-10 text-gray-300"
+                  className="text-sm md:text-lg leading-relaxed mb-6 md:mb-10 text-gray-300"
                 />
 
-                <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-0 text-left mb-4 md:mb-6 w-full">
                   <div>
-                    <h1 className="text-3xl md:text-4xl mb-1">
+                    <h1 className="text-xl sm:text-2xl md:text-4xl mb-0.5 md:mb-1 font-bold">
                       20<span className="text-violet-500">+</span>
                     </h1>
-                    <p>Project Finished</p>
+                    <p className="text-xs sm:text-sm md:text-base leading-tight">Project<br className="block md:hidden"/> Finished</p>
                   </div>
                   <div>
-                    <h1 className="text-3xl md:text-4xl mb-1">
+                    <h1 className="text-xl sm:text-2xl md:text-4xl mb-0.5 md:mb-1 font-bold">
                       3<span className="text-violet-500">+</span>
                     </h1>
-                    <p>Years of Experience</p>
+                    <p className="text-xs sm:text-sm md:text-base leading-tight">Years of<br className="block md:hidden"/> Experience</p>
                   </div>
                   <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
-                    <h1 className="text-3xl md:text-4xl mb-1">
-                      3.96<span className="text-violet-500">/4.00</span>
+                    <h1 className="text-xl sm:text-2xl md:text-4xl mb-0.5 md:mb-1 font-bold">
+                      3.96<span className="text-violet-500 text-sm sm:text-lg md:text-3xl">/4.00</span>
                     </h1>
-                    <p>IPK</p>
+                    <p className="text-xs sm:text-sm md:text-base leading-tight">IPK</p>
                   </div>
                 </div>
 
@@ -180,26 +180,26 @@ function App() {
               </div>
             </div>
 
-            <div className="basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full flex justify-center ">
+            <div className="hidden md:flex basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full justify-center ">
               <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
             </div>
           </div>
         </div>
 
-        <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+        <div className="tools mt-20 md:mt-32">
+          <h1 className="text-2xl md:text-4xl/snug font-bold mb-2 md:mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
+          <p className="w-full md:w-2/5 text-sm md:text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
+          <div className="tools-box mt-8 md:mt-14 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 sm:gap-4">
 
             {listTools.map((tool) => (
               <div
                 key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true"
-                className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
+                className="flex items-center gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
               >
                 <img
                   src={tool.gambar}
                   alt="Tools Image"
-                  className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain bg-zinc-800 p-1.5 sm:p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
                 />
                 <div className="flex flex-col overflow-hidden">
                   <div className="truncate">
@@ -207,19 +207,19 @@ function App() {
                       text={tool.nama}
                       disabled={false}
                       speed={3}
-                      className="text-lg font-semibold block"
+                      className="text-sm sm:text-base md:text-lg font-semibold block"
                     />
                   </div>
-                  <p className="text-sm text-zinc-400 truncate">{tool.ket}</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm text-zinc-400 truncate">{tool.ket}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
  
-        <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
+        <div className="proyek mt-20 md:mt-32 py-6 md:py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
         <h1 
-          className="text-left sm:text-center text-4xl font-bold mb-2" 
+          className="text-left sm:text-center text-2xl md:text-4xl font-bold mb-2" 
           data-aos="fade-up" 
           data-aos-duration="1000" 
           data-aos-once="true"
@@ -227,7 +227,7 @@ function App() {
           Project
         </h1>
         <p 
-          className="text-left sm:text-center text-base/loose opacity-50" 
+          className="text-left sm:text-center text-sm md:text-base/loose opacity-50" 
           data-aos="fade-up" 
           data-aos-duration="1000" 
           data-aos-delay="300" 
@@ -249,10 +249,10 @@ function App() {
           </div>
         </div>
 
-        <div className="kontak mt-32 sm:p-10 p-0" id="contact">
+        <div className="kontak mt-20 md:mt-32 sm:p-10 p-0" id="contact">
           <h1
             // 👇 text-center diubah jadi text-left sm:text-center
-            className="text-4xl mb-2 font-bold text-left sm:text-center"
+            className="text-2xl md:text-4xl mb-2 font-bold text-left sm:text-center"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once="true"
@@ -262,7 +262,7 @@ function App() {
           
           <p
             // 👇 text-center diubah jadi text-left sm:text-center
-            className="text-base/loose text-left sm:text-center mb-10 opacity-50"
+            className="text-sm md:text-base/loose text-left sm:text-center mb-6 md:mb-10 opacity-50"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
@@ -280,7 +280,7 @@ function App() {
               <form
                 action="https://formsubmit.co/hasmigastilo@gmail.com"
                 method="POST"
-                className="bg-zinc-800 p-10 w-full rounded-md"
+                className="bg-zinc-800 p-6 md:p-10 w-full rounded-md"
                 autoComplete="off"
                 data-aos="fade-up"
                 data-aos-duration="1000"
